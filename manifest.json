@@ -1,0 +1,16 @@
+{
+  "name": "JXtnsion",
+  "version": "0.1",
+  "manifest_version": 2,
+  "app": {
+    "launch":{
+      "local_path":"index.html"
+    }
+  },
+  "permissions": [
+    "https://*/"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}

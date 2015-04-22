@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="jXtnsion" ng-csp>
+<head>
+
+  <title>JXtnsion</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/css/main.css">
+  <script src="app/js/jquery-2.1.1.min.js"></script>
+  <script src="app/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <!--Materializecss styles -->
+  <link href="app/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="app/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+<body ng-controller='JXtnsionCtrl' ng-style="{'background-image': getImage}">
+ <div id='header'>
+  <h1 class="grey-text text-darken-5">JXtnsion</h1>
+ </div>
+
+ <div id='dateToday' class="grey-text text-darken-5">
+  {{dateToday | date:'medium'}}
+ </div>
+
+ <div id='currentCity' class="grey-text text-darken-5">
+  {{weatherToday.data.request[0].query}}
+ </div>
+
+ <div id="temp" class="grey-text text-darken-5">
+  {{weatherToday.data.current_condition[0].temp_C}}&deg; C
+ </div>
+
+ <div id="weatherPic">
+  <img src="{{weatherToday.data.current_condition[0].weatherIconUrl[0].value}}"></img>
+ </div>
+
+ <div id='countries' class='row grey-text text-darken-5 '>
+  <div class="col s1.5">
+    <div>New York</div>
+    <div>{{dateToday - 14400000 - 3600000 | date:'hh:mm:ss a'}}</div>
+  </div>
+
+   <div class="col s1.5">
+    <div>London</div>
+    <div>{{dateToday | date:'hh:mm:ss a'}}</div>
+  </div>
+
+   <div class="col s1.5">
+    <div>Buenos Aires</div>
+    <div>{{dateToday - 10800000 - 3600000| date:'hh:mm:ss a'}}</div>
+  </div>
+
+   <div class="col s1.5">
+    <div>Johannesburg</div>
+    <div>{{dateToday + 7200000 - 3600000| date:'hh:mm:ss a'}}</div>
+  </div>
+
+   <div class="col s1.5">
+    <div>Paris</div>
+    <div>{{dateToday + 7200000 - 3600000| date:'hh:mm:ss a'}}</div>
+  </div>
+
+   <div class="col s1.5">
+    <div>Sydney</div>
+    <div>{{dateToday + 36000000 - 3600000| date:'hh:mm:ss a'}}</div>
+  </div>
+
+   <div class="col s1.5">
+    <div>Toronto</div>
+    <div>{{dateToday - 14400000 - 3600000 | date:'hh:mm:ss a'}}</div>
+  </div>
+
+   <div class="col s1.5">
+    <div>Moscow</div>
+    <div>{{dateToday + 10800000 - 3600000| date:'hh:mm:ss a'}}</div>
+  </div>
+
+   
+ </div>
+
+ <div id='freckle'>
+
+ <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header btn-large waves-effect waves-light blue">
+        <i class="mdi-action-alarm"></i>
+        Track Time on Freckle!
+      </div>
+    
+      <div id = 'project' class="collapsible-body" ng-repeat = "project in freckleInfo">
+        <p>
+          {{project.name}}
+          <span id='buttons'>
+            <i id='play' class="mdi-av-play-circle-fill small" ng-click="startTimer(project.id)"></i>
+            <i id='pause' class="mdi-av-pause-circle-fill small" ng-click="pauseTimer(project.id)"></i>
+            <i id='log' class="mdi-action-done small" ng-click="logTimer(project.id)"></i>
+          </span>
+        </p>
+      </div>
+    </li>
+  </ul>
+
+  
+  <form ng-submit="saveFreckleKey(freckleKey)" id='freckleform' ng-if="freckleDisplay">
+  <span class='row grey-text text-darken-5 '>Enter Your Freckle API Key:</span><input type='text' id='frecklekey' ng-model="freckleKey">
+  <input type='submit' id='submitkey' ng-click="saveFreckleKey(freckleKey)"></input>
+ </form>
+ </div>
+
+ <div id='todo' >
+  <h5 class='row grey-text text-darken-5 '>Things to Do</h5>
+   <input type='text'id = 'todoInput' ng-model='todoInput' class='row grey-text text-darken-5 '></input><button id='todoSubmit' class="btn-medium waves-effect waves-light blue" ng-click="saveTodo(todoInput)">Save</button><button id='todoClear' class="btn-medium waves-effect waves-light blue" ng-click="clearTodo()">Clear All</button>
+   <div id='todoList'  class='row grey-text text-darken-5'>
+     <ul>
+     <li ng-repeat="todo in todoArray">{{todo}}<li>
+     </ul>
+   </div>
+ </div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="app/bower_components/angular/angular.js"></script>
+  <script src="app/js/controllers.js"></script>
+  <script src="app/js/services.js"></script>
+
+  <!--materialize javascript files-->
+  
+  <script src="app/js/materialize.js"></script>
+  <script src="app/js/init.js"></script>
+</body>
+</html>
