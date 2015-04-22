@@ -1,1 +1,1 @@
-A chrome browser extension built with AngularJS. Displays time, date, local weather condition and enables users to start, stop and log time on freckle. It also has a simple task manager
+A chrome browser extension built with AngularJS. Displays time, date, local weather condition and enables users to start, stop and log time on freckle. It also has a simple task manager to manage activities.
