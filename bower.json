@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "name": "JXtnsion",
+  "description": "A chrome browser extension built with AngularJS. Displays time, date, local weather condition and enables users to start, stop and log time on freckle. It also has a simple task manager",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/andela-asogbein/AngularJS-Chrome-Extension",
   "license": "MIT",
   "private": true,
   "dependencies": {

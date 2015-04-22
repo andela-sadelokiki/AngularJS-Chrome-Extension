@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "JXtnsion",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "0.0.5",
+  "description": "A chrome browser extension built with AngularJS. Displays time, date, local weather condition and enables users to start, stop and log time on freckle. It also has a simple task manager",
+  "repository": "https://github.com/andela-asogbein/AngularJS-Chrome-Extension",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
@@ -30,6 +30,6 @@
     "protractor": "protractor test/e2e-tests/protractor.conf.js",
     
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
-    
   }
 }
+  
