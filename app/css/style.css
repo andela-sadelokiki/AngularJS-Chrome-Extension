@@ -76,11 +76,8 @@ body {
 
 #todo{
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: left;
-  overflow: auto;
-  height: 300px;
-  width: 250px;
   margin: 5px
 }
 

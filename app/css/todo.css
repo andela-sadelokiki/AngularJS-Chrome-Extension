@@ -1,0 +1,81 @@
+/*
+body{
+  background-image: url("http://www.dumblittleman.com/wp-content/uploads/2014/04/Great-To-Do-List.jpg");
+  background-size: cover;
+    height: 100%;
+    min-width: 100%;
+}
+*/
+select{
+  display: block;
+}
+#modal1{
+background: black;
+}
+.modal-action{
+  color: white;
+}
+
+
+h3 {
+  font-size: 2.92rem;
+  line-height: 3.212rem;
+  margin: 1.46rem 0 1.168rem 0;
+  color: white;
+}
+
+html {
+  line-height: 1.5;
+  font-family: cursive;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+}
+#Title {
+  color: rgb(226, 224, 43);
+  margin-left: 50px;
+}
+.ng-binding{
+  color: white;
+}
+.row{
+  background-color: rgb(129, 97, 104);
+  
+}
+#plans{
+  background-color: rgb(41, 75, 105);
+  height: 400px;
+}
+.subtitle{
+  background-color: rgb(68, 45, 84);
+}
+.container{
+  height: 400px;
+  background-color: 
+}
+#todonew{
+  overflow: auto;
+  height: 400px;
+  background: rgb(71, 5, 45)
+}
+/*
+.row .col.s6 {
+  width: 50%;
+  margin-left: 0;
+  background-color: rgb(71, 5, 45);;
+  height: 400px;
+  overflow: auto;
+}
+*/
+.taskDate.done-false{
+
+  font-size: 15px;
+  color: white;
+
+}
+#title{
+  rgb(226, 224, 43);
+}
+
+.row .ttd {
+  padding: 0 4em;
+}

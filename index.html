@@ -13,11 +13,14 @@
   <!--Materializecss styles -->
   <link href="app/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="app/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="app/css/todo.css">
 
 </head>
 <body ng-controller='JXtnsionCtrl' ng-style="{'background-image': getImage}">
  <div id='header'>
   <h1 class="grey-text text-darken-5">JXtnsion</h1>
+
+
  </div>
 
  <div id='dateToday' class="grey-text text-darken-5">
@@ -109,25 +112,75 @@
  </form>
  </div>
 
- <div id='todo' >
-  <h5 class='row grey-text text-darken-5 '>Things to Do</h5>
-   <input type='text'id = 'todoInput' ng-model='todoInput' class='row grey-text text-darken-5 '></input><button id='todoSubmit' class="btn-medium waves-effect waves-light blue" ng-click="saveTodo(todoInput)">Save</button><button id='todoClear' class="btn-medium waves-effect waves-light blue" ng-click="clearTodo()">Clear All</button>
-   <div id='todoList'  class='row grey-text text-darken-5'>
-     <ul>
-     <li ng-repeat="todo in todoArray">{{todo}}<li>
-     </ul>
-   </div>
- </div>
+ <div id='todo'><!--div containing sus todo-->
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#todomodal">Task Manager</a>
+  <!-- Modal Structure -->
+  <div id="todomodal" class="modal">
+    <div class="modal-content">
+             <div class="row">
+                  <div class="subtitle">
+                    <h3 class = "center-align">Todo List Manager</h3>
+                      <div>
+                      <p class = "center-align"><i style ="font-size: 25px">every second counts...</i></p>
+                      </div>
+                  </div>
+                  <div class="col s6" id="plans">
+                    <div>
+                      <i class="large mdi-notification-event-note"></i><h5 id="Title">Your Plans?</h5>
+                        <div class="grid-example col s12 m6" align="left"> 
+                          <input type = "text" id = "description" ng-model="newTask" placeholder="Got to do">
+                            <div class= "section ">
+                              <input type="date" id="dueDate" class="taskDate" ng-model="newTaskDate">
+                              <label for="dueDate">Due Date</label>
+                            </div>
+                          </div>
+                          <div class="grid-example col s12 m6" align="left"> 
+                            <div class="input-field col s12" >
+                              <select ng-model="opt" ng-options="priority.name for priority in priorities" ng-change = "change()"> 
+                                <option value="" disabled selected >Choose your option</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="grid-example col s12 m12">
+                            <a class="waves-effect waves-light btn add" ng-click="addTask()">Add Task</a> 
+                          </div>
+                    </div>
+                  </div>
+                  <div class="col s6 ttd" id="todonew">
+                      <i class="large mdi-action-note-add"></i><h5 id="Title">Things to do</h5>
+                        <form action="#" >
+                        
+                          
+                            <p ng-repeat= "todo in todoList">
+                              <input type="checkbox" id="{{todo.text}}" class="qw" ng-model="todo.done" />
+                                <label for="{{todo.text}}" class="susan">{{todo.text}}</label> <strong class = "taskDate done-{{todo.done}}" style ="font-size: 15px"> on {{todo.date|date:'mediumDate'}} | {{todo.priority}}</strong>
+                                 
+                            </p>
+                          
+                        </form>  
+                          <a class="waves-effect waves-light btn delete" ng-click="delete()">Delete Selected Task</a>
+                    
+                  </div>
+                </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
 
+  <!-- Modal Structure -->
+ </div>
+<!--mine-->
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="app/bower_components/angular/angular.js"></script>
+  <!--<script src="app/js/app.js"></script>-->
   <script src="app/js/controllers.js"></script>
   <script src="app/js/services.js"></script>
 
   <!--materialize javascript files-->
-  
   <script src="app/js/materialize.js"></script>
   <script src="app/js/init.js"></script>
 </body>
