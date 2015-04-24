@@ -15,6 +15,9 @@ background: black;
 .modal-action{
   color: white;
 }
+.modal-content{
+    padding: 1px !important;
+}
 
 
 h3 {
@@ -34,15 +37,15 @@ html {
   color: rgb(226, 224, 43);
   margin-left: 50px;
 }
-.ng-binding{
+/*.ng-binding{
   color: white;
 }
-.row{
+*/.row{
   background-color: rgb(129, 97, 104);
   
 }
 #plans{
-  background-color: rgb(41, 75, 105);
+  border-right:1px solid black;
   height: 400px;
 }
 .subtitle{
@@ -55,7 +58,7 @@ html {
 #todonew{
   overflow: auto;
   height: 400px;
-  background: rgb(71, 5, 45)
+  
 }
 /*
 .row .col.s6 {

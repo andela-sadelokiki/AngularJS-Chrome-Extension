@@ -5,13 +5,16 @@
  *
  * Made By MaterializeCSS.com
  */
+#timecontainer{
+  height: 300px;
+  width: 300px;
+}
 
 .icon-block {
   padding: 0 15px;
 }
 
-#header {
-  font-weight: 800;
+#header{
   text-align: center;
 }
 
@@ -53,7 +56,6 @@ body {
   background-color: grey;
   
 }
-
 #play, #pause, #log{
   cursor: pointer;
 }
@@ -76,7 +78,7 @@ body {
 
 #todo{
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: left;
   margin: 5px
 }
