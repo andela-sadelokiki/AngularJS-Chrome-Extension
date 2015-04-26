@@ -82,3 +82,7 @@ html {
 .row .ttd {
   padding: 0 4em;
 }
+
+p.center-align{
+    color: rgb(39, 163, 186);
+}
